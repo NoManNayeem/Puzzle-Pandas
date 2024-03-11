@@ -1,0 +1,29 @@
+# Byte-compiled / optimized Python files
+*.pyc
+__pycache__/
+
+# Directory for virtual environments
+venv/
+
+# Local development settings
+local_settings.py
+
+# Database
+db.sqlite3
+*.sqlite3
+
+# Media files
+media/
+
+# Static files
+staticfiles/
+
+# Secret keys
+*.secret_key
+
+# Log files
+*.log
+
+# Ignore migration files if you are using South or Django Migrations
+**/migrations/*.py
+**/migrations/*.pyc

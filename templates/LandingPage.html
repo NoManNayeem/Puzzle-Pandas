@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Our Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: background-color 0.5s ease;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover, .navbar a:focus {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .hero-section {
+            background: url('https://placehold.co/600x400') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+            transition: transform 0.5s ease-out;
+            animation: slideIn 1s ease-out forwards;
+        }
+
+        .features, .about, .cta {
+            padding: 80px 20px;
+            text-align: center;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .cta button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .cta button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section, .features, .about, .cta {
+                padding: 40px 10px;
+            }
+
+            .navbar a {
+                padding: 10px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <a href="#hero">Home</a>
+    <a href="#features">Features</a>
+    <a href="#about">About</a>
+    <a href="#cta">Join Us</a>
+</div>
+
+<div class="hero-section" id="hero">
+    <h1>Welcome to Our Platform</h1>
+    <p>Discover the difference with our innovative solutions</p>
+</div>
+
+<div class="features" id="features">
+    <h2>Our Features</h2>
+    <p>Explore the wide range of features designed to empower your experience.</p>
+</div>
+
+<div class="about" id="about">
+    <h2>About Us</h2>
+    <p>Learn more about our mission, vision, and the values that drive us.</p>
+</div>
+
+<div class="cta" id="cta">
+    <h2>Ready to Get Started?</h2>
+    <button onclick="location.href='login/'">Join Now</button>
+</div>
+
+<footer>
+    <p>Copyright © Your Website 2024</p>
+</footer>
+
+</body>
+</html>
