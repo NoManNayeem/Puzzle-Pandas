@@ -4,10 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>No Active Campaign</title>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: #f0f0f0;
+            animation: fadeIn 1s ease-out;
+        }
+
+        h1 {
+            color: #333;
+            animation: fadeIn 2s ease-out;
+        }
+
+        p {
+            color: #666;
+            animation: fadeIn 3s ease-out;
+        }
+
+        .back-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            text-decoration: none;
+            animation: fadeIn 4s ease-out;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <h1>No Active Campaign</h1>
     <p>There are currently no active campaigns available.</p>
-    <!-- You can provide additional instructions or links here -->
+    <!-- Button to go back to home page -->
+    <a href="/home" class="back-button">Go Back to Home</a>
 </body>
 </html>

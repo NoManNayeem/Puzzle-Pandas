@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Puzzle-Panda - Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body, html {
             height: 100%;
@@ -12,7 +13,6 @@
         }
 
         .bg {
-            /* Adjust the background image to fit your branding */
             background-image: url('https://placehold.co/1920x1080/orange/white');
             background-position: center;
             background-size: cover;
@@ -31,38 +31,19 @@
             max-width: 400px;
         }
 
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        input[type="text"], input[type="email"], input[type="password"] {
-            width: 100%;
-            padding: 15px;
-            margin: 10px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-            border-radius: 5px;
-        }
-
         button {
-            background-color: #4CAF50; /* Adjust to match your brand colors */
+            background-color: #4CAF50;
             color: white;
-            padding: 14px 20px;
-            margin: 10px 0;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            border-radius: 5px;
         }
 
         button:hover {
             opacity: 0.8;
         }
 
-        .text-center {
-            text-align: center;
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin-bottom: 15px;
         }
     </style>
 </head>
@@ -72,21 +53,30 @@
     <div class="register-container">
         <h1 align='center'><a href="/">Puzzle-Panda</a></h1>
         <h3 align='center'>Create Your Account</h3>
-        <!-- Display Django messages -->
         {% if messages %}
-            {% for message in messages %}
-                <p style="color: red;">{{ message }}</p>
-            {% endfor %}
+            <div class="error-message">
+                {% for message in messages %}
+                    {{ message }}<br>
+                {% endfor %}
+            </div>
         {% endif %}
-        <form action="{% url 'register' %}" method="post">
+        <form action="" method="post">
             {% csrf_token %}
-            <input type="text" placeholder="Username" name="username" required>
-            <input type="email" placeholder="Email" name="email" required>
-            <input type="password" placeholder="Password" name="password1" required>
-            <input type="password" placeholder="Confirm Password" name="password2" required>
-            <button type="submit">Register</button>
-            <div class="text-center">
-                <p>Already have an account? <a href="{% url 'login' %}">Log in</a>.</p>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Username" name="username" required value="{{ username|default:'' }}">
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" placeholder="Email" name="email" required value="{{ email|default:'' }}">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Password" name="password" required>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Confirm Password" name="password_confirmation" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
+            <div class="text-center mt-2">
+                Already have an account? <a href="{% url 'login' %}">Log in</a>.
             </div>
         </form>
     </div>
